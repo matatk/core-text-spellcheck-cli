@@ -1,6 +1,6 @@
 {
   "name": "core-text-spellcheck-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Basic text file spell-checker",
   "keywords": [
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "precommit": "npm test",
-    "test": "eslint core-text-spellcheck && eslint ."
+    "test": "eslint core-text-spellcheck *.js"
   },
   "dependencies": {
     "core-text-spellcheck": "github:matatk/core-text-spellcheck#0.3.0",

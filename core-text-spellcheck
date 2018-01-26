@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 'use strict'
 require('./')({
-	spellChecker: require('core-text-spellcheck')
+	spellCheckerInit: (options) => require('core-text-spellcheck')(options),
+	spellCheckerCall: (spellChecker, content) => spellChecker(content)
 })()

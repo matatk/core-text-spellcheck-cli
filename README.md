@@ -15,17 +15,16 @@ This can also be used as a library for making command-line spell-checkers.
 ```javascript
 #!/usr/bin/env node
 'use strict'
-const coreTextSpellcheckerCommand = require('core-text-spellcheck-cli')({
-	spellChecker: require('core-text-spellcheck')
-})
-coreTextSpellcheckerCommand.main()
+require('core-text-spellcheck-cli')({
+	spellCheckerInit: (options) => require('core-text-spellcheck')(options),
+	spellCheckerCall: (spellChecker, content) => spellChecker(content)
+})()
 ```
 
 ### Required options
 
-* `spellChecker` (generally a required module)&mdash;the underlying spell-checker library to use. It must...
-   - support the [same options as core-text-spellcheck](https://github.com/matatk/core-text-spellcheck#options).
-   - provide a `check()` function.
+* `spellCheckerInit(options)`&mdash;function taking a single parameter, an "options" object. This object should be passed to the spell-checking wrapper you are using, which must support the [same options as core-text-spellcheck](https://github.com/matatk/core-text-spellcheck#options). **Returns:** your chosen spell-checker, initialised.
+* `spellCheckerCall(spellChecker, content)`&mdash;function that takes the initialised `spellChecker` and the content to be checked, and calls the spell-checker with the content to be checked. This is useful when your spell-checker might not just be a simple function, but an object with a method that is used to perform the spell-check.
 
 ### Optional
 
