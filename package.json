@@ -1,0 +1,42 @@
+{
+  "name": "core-text-spellcheck-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Basic text file spell-checker",
+  "keywords": [
+    "basic",
+    "cli",
+    "core",
+    "spell",
+    "spell-check",
+    "spellcheck",
+    "spelling",
+    "text"
+  ],
+  "homepage": "https://github.com/matatk/core-text-spellcheck-cli#readme",
+  "bugs": {
+    "url": "https://github.com/matatk/core-text-spellcheck-cli/issues"
+  },
+  "license": "MIT",
+  "author": "Matthew Tylee Atkinson",
+  "main": "index.js",
+  "bin": {
+    "core-text-spellcheck": "./core-text-spellcheck"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matatk/core-text-spellcheck-cli.git"
+  },
+  "scripts": {
+    "precommit": "npm test",
+    "test": "eslint core-text-spellcheck && eslint ."
+  },
+  "dependencies": {
+    "core-text-spellcheck": "github:matatk/core-text-spellcheck#0.3.0",
+    "yargs": "~11.0"
+  },
+  "devDependencies": {
+    "eslint": "~4.16",
+    "husky": "~0.14"
+  }
+}
